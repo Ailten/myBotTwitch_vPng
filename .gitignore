@@ -1,0 +1,6 @@
+node_modules
+node-raylib
+package-lock.json
+package.json
+BotDiscord/paramDiscordBot.js
+BotTwitchLib/paramTwitchBot.js
