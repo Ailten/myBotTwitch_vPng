@@ -9,13 +9,13 @@ module.exports = {
         //array of mp3.
         const arrayMp3 = [
             {
-                path: '/home/faouzi/Téléchargements/susMp3/blacaMp3/blacaPetitPas.mp3', 
-                volume: 60, 
+                path: '/home/faouzi/Téléchargements/susMp3/blacaMp3/blacaPetitPas.mp3',
+                volume: 60,
                 intencityRng: 95
             },
             {
-                path: '/home/faouzi/Téléchargements/susMp3/blacaMp3/blacaGasm.mp3', 
-                volume: 30, 
+                path: '/home/faouzi/Téléchargements/susMp3/blacaMp3/blacaGasm.mp3',
+                volume: 30,
                 intencityRng: 5
             }
         ];
@@ -25,7 +25,7 @@ module.exports = {
         let indexFind = 0; //index find in array.
         let intencityRngCumul = 0; //cumul all intencityRng browse.
 
-        for(indexFind=0; indexFind<arrayMp3.length; indexFind++){
+        for(indexFind=0; indexFind<arrayMp3.length; indexFind++){ //loop until find index based on randomNumber.
             intencityRngCumul;
             let intencityRngCumulNext = intencityRngCumul + arrayMp3[indexFind].intencityRng;
             if(randomNumber >= intencityRngCumul && randomNumber < intencityRngCumulNext){
@@ -34,9 +34,9 @@ module.exports = {
             intencityRngCumul = intencityRngCumulNext;
         }
 
-        let celFind = arrayMp3[Math.indexFind];
+        let celFind = arrayMp3[Math.indexFind]; //get cel.
 
-        this.cmdPlayer.playMp3(celFind.path, celFind.volume);
+        this.cmdPlayer.playMp3(celFind.path, celFind.volume); //play mp3.
 	
 	}
 }

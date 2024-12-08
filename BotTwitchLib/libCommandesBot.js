@@ -43,7 +43,6 @@ module.exports = {
 			
 			//for broadcaster.
 			this.commande('debug', 'broadcaster');
-			this.commande('eval', 'broadcaster');
 			//this.commande('wholive', 'broadcaster'); //FIXME : debug call fetch.
 			//this.commandeCustomName('whostream', 'broadcaster', 'wholive');
 
