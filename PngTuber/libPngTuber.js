@@ -56,7 +56,7 @@ module.exports = {
         //isHide : false //for skip layer hide in render process.
 
         //load all layers.
-        const pathSprite = '/home/faouzi/Documents/myBotTwitch_vPngTuber/PngTuber/sprites/newOC2/';
+        const pathSprite = '/home/faouzi/Documents/myBotTwitch_vPng2/PngTuber/sprites/newOC2/';
         var layers = [
             {
                 sprite: this.raylib.LoadTexture(pathSprite + 'axoHat2.png'),

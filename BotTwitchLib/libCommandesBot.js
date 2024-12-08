@@ -26,7 +26,8 @@ module.exports = {
 			//this.commandeCustomName('csc', 'viewer', 'chlow');
 			this.commande('damn', 'viewer');
 			this.commandeCustomName('ria', 'viewer', 'damn');
-			//this.commande('blaca', 'viewer'); //DOTO: ask blaca permission !!!
+			this.commande('blaca', 'viewer');
+			this.commandeCustomName('blacacia', 'viewer', 'blaca');
             this.commande('malaise', 'viewer');
 			this.commandeCustomName('babulle', 'viewer', 'malaise');
 			

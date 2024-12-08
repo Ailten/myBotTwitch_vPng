@@ -36,7 +36,6 @@ module.exports = {
         this.init(); //init the bot.
 
         setTimeout((lib) => {
-
             lib.allChannels.sendMessage(
                 lib.clientDiscord, //clientDiscord.
                 'coucou, ceci est un message pour signaler que je suis en stream :0 (j\'ais pas mi de ping parceque c relou)', //message.
@@ -46,9 +45,9 @@ module.exports = {
 
             setTimeout((lib) => { //deinit the bot.
                 lib.deinit();
-            }, 1000, lib);
+            }, 2000, lib);
 
-        }, 1000, this);
+        }, 2000, this);
 
     }
 

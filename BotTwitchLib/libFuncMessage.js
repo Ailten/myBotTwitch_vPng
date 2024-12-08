@@ -35,7 +35,7 @@ module.exports = {
     //function to return true if msgStr start by the cmd (first word).
     compareMsgToCmd: function(msgStr, cmdStr){
 
-		let msgFirstWord = (/^[a-zA-Z]{1,}/).exec(msgStr.toLowerCase())[0]; //get first word !... .
+		let msgFirstWord = (/^[a-zA-Z0-9_-]{0,}/).exec(msgStr.toLowerCase())[0]; //get first word !... .
 		let cmdStrLowerCase = cmdStr.toLowerCase(); //lower case.
 
     	return (msgFirstWord === cmdStrLowerCase);
