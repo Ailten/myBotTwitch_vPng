@@ -4,26 +4,25 @@ module.exports = {
     //execute cmd.
     cmdPlayer: require('./../libCmdPlayer.js'),
 
-    allPseudo: [ //'ailten', 'somendadidi'
+    allPseudo: [ //'ailten'
     
         //*
         'axolootl_vt',
-        {pseudoTwitch:'i3abulle', memo:'babulle'},
+        'babulle',
+        'somenda__',
 
-        'homu_vt',
         'slazaa',
-        {pseudoTwitch:'madame_poutre', memo:'lodos'},
+        'madame_poutre',
         'harlyne_q',
         'minetane',
         'mikenlos',
-        'berry_noko',
+        {pseudoTwitch:'prosperpoulet', memo:'berry'},
         {pseudoTwitch:'fowenart', memo:'dessinateur de berry'},
         'echorosen',
         'katchanvt',
         'lun_ally',
         {pseudoTwitch:'anya_rosegold', memo:'shubby racoon de ika'},
         'blacacia',
-        'ekyuvt',
         'drahalan',
         'barbak_vt',
         'rianoxia',
@@ -36,11 +35,9 @@ module.exports = {
         'kxsato',
         {pseudoTwitch:'tentacular_ikemen', memo:'ikayaki (skwi-skwi)'},
         'darumanico',
-        'yuuki_vt',
 
         'toya_le_bg_du_bled',
         'aluneo_',
-        'somendadidi',
         'kamishishi',
         'dr_jester974',
         'laubergiste_vt',
@@ -49,7 +46,6 @@ module.exports = {
         {pseudoTwitch:'doctesla_vt', memo:'edward'},
         'aquilios_',
         'just1chat',
-        'shubbley',
         'edogi',
         'lapyon_',
         'leirionlys',
@@ -57,18 +53,22 @@ module.exports = {
         'clive_vt',
         'kokoroneon',
         'meliodas__vt',
-        {pseudoTwitch:'shiholitchi', memo:'la dessinatrice cheveux blanc + voix'},
-        {pseudoTwitch:'s_iroh', memo:'siro president nyasobi'},
+        'shiholitchi',
+        's_iroh',
         'julien_060',
         {pseudoTwitch:'shadow_atlantide', memo:'shadow pipou (comu babulle)'},
         'lady_shanoa',
         'angeceleste',
-        //*/
+        'nenlys_the_lamia',
+
+        'yuuki_vt',
+        'homu_vt',
+        'shubbley',
+        'xialv',
+        'ekyuvt'
 
         /*///---
         {pseudoTwitch:'athemosvt', memo:'drama pedo'},
-        {pseudoTwitch:'yuiicky', memo:'drama avatar homu'},
-        {pseudoTwitch:'misssillica', memo:'drama avatar homu (groupie)'},
         //*///---
     ],
 

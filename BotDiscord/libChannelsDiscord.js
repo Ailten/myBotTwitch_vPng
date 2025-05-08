@@ -8,7 +8,7 @@ module.exports = {
     ],
 
     //send a message in a discord channel.
-    sendMessage: function (clientDiscord, message, channelName, isInBox=false) {
+    sendMessage: async function (clientDiscord, message, channelName, isInBox=false) {
 
         //make a discord box message (for code or asci).
         if(isInBox){
@@ -16,19 +16,25 @@ module.exports = {
         }
 
         //get channel by id.
-        let channel = this.getChannelByName(clientDiscord, channelName);
-        if(channel === null)
-            return false;
+        let channel = undefined;
+        await this.getChannelByName(clientDiscord, channelName)
+            .then((result) => {
+                channel = result;
+            })
+            .catch((error) => {
+                throw error;
+            });
 
         //send message to channel.
-        channel.send(message);
+        await channel.send(message)
+            .catch((error) => {
+                throw error;
+            });
 
-        //success.
-        return true;
     },
 
     //get an obj channel by name.
-    getChannelByName: function(clientDiscord, channelName){
+    getChannelByName: async function(clientDiscord, channelName){
 
         //get channel obj (name - id).
         let channelFind = this.channels.find((c) => c.name === channelName);
@@ -36,9 +42,15 @@ module.exports = {
             return null;
 
         //get channel by id.
-        let channel = clientDiscord.channels.cache.get(channelFind.id);
-        if(channel === undefined)
-            return null;
+        let channel = undefined;
+        await clientDiscord.channels.fetch(channelFind.id)
+            .then((result) => {
+                console.log(result); // fixeme: channels is empty, for unknow reason.
+                channel = result;
+            })
+            .catch((error) => {
+                throw error;
+            });
 
         return channel;
 

@@ -1,7 +1,7 @@
 
 module.exports = {
 
-    discord: require('discord.js-v11'), //lib for using bot discord. //FIXME lib don't work.
+    discord: require('discord.js-v11'), //lib for using bot discord. //FIXME lib don't work. //-v11 because v14 need TS. (i guess)
     clientDiscord: null, //the client connected.
     tokenBotDiscord: require('./paramDiscordBot.js'), //token for connect acount bot discord.
 
@@ -26,28 +26,63 @@ module.exports = {
 
     },
 
+    //func for init the bot (but wait until connected).
+    awaitInit: async function(){
+
+        this.init();
+
+        let loopCount = 0;
+        const loopCountMax = 300;
+
+        while(true){
+
+            //wait.
+            await (new Promise(resolve => {
+                setTimeout(()=>{
+                    resolve();
+                }, 200);
+            }));
+
+            if(this.clientDiscord === undefined)
+                continue;
+
+            if(this.clientDiscord.presence.status === 'online'){ // bot discord is ready.
+                break;
+            }
+
+            loopCount++;
+            if(loopCount > loopCountMax){
+                throw new Error("max loop connection client bot discord reach !");
+            }
+
+        }
+
+    },
+
     //shut down the client bot discord.
     deinit: function(){
         this.clientDiscord.destroy();
     },
 
-    sendPingStartStream: function(){
+    sendPingStartStream: async function(){
 
-        this.init(); //init the bot.
+        await this.awaitInit() //init the bot.
+            .catch((error) => {
+                throw error;
+            });
 
-        setTimeout((lib) => {
-            lib.allChannels.sendMessage(
-                lib.clientDiscord, //clientDiscord.
-                'coucou, ceci est un message pour signaler que je suis en stream :0 (j\'ais pas mi de ping parceque c relou)', //message.
-                'ping-live',  //channelName.
-                true //isInBox.
-            );
+        console.log(this.clientDiscord);
 
-            setTimeout((lib) => { //deinit the bot.
-                lib.deinit();
-            }, 2000, lib);
+        await this.allChannels.sendMessage(
+            this.clientDiscord, //clientDiscord.
+            'coucou, ceci est un message pour signaler que je suis en stream :0 (j\'ais pas mi de ping parceque c relou)', //message.
+            'bot-log', //'ping-live',  //channelName.
+            true //isInBox.
+        ).catch((error) => {
+            throw error;
+        });
 
-        }, 2000, this);
+        this.deinit(); //deinit the bot.
 
     }
 

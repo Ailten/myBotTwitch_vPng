@@ -20,7 +20,9 @@ module.exports = {
             }
         ];
 
-        let totalIntencityRng = arrayMp3.sum((e) => e.intencityRng); //eval total intencity.
+        let totalIntencityRng = arrayMp3.map((e) => e.intencityRng).reduce((accumulator, currentValue) => {  //eval total intencity.
+            return accumulator + currentValue 
+        }, 0);
         let randomNumber = Math.floor(Math.random() * totalIntencityRng); //generate a random number.
         let indexFind = 0; //index find in array.
         let intencityRngCumul = 0; //cumul all intencityRng browse.
@@ -34,7 +36,7 @@ module.exports = {
             intencityRngCumul = intencityRngCumulNext;
         }
 
-        let celFind = arrayMp3[Math.indexFind]; //get cel.
+        let celFind = arrayMp3[indexFind]; //get cel.
 
         this.cmdPlayer.playMp3(celFind.path, celFind.volume); //play mp3.
 	

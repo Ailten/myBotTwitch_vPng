@@ -13,9 +13,6 @@ client.connect();
 const libFuncConnected = require('./BotTwitchLib/libFuncConnected.js');
 const pngTuber = require('./PngTuber/libPngTuber.js'); //Import for PNGtuber.
 client.on('connected', (addr, port) => {
-	
-	//change color name (FIXME : cmd / don't work when all by a bot).
-	//client.say('#ailten', '/color BlueViolet');
 
 	//say something in chat (or cmd window).
 	libFuncConnected.connected(addr, port, client);

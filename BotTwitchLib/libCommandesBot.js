@@ -10,8 +10,8 @@ module.exports = {
 
 			//cmd viewers.
 			this.commande('miaou', 'viewer');
-			this.commande('hug', 'viewer');
-			this.commandeCustomName('kiss', 'viewer', 'hug');
+			//this.commande('hug', 'viewer');
+			//this.commandeCustomName('kiss', 'viewer', 'hug');
 			this.commande('uwu', 'viewer');
 			this.commande('pipou', 'viewer');
 			this.commande('whip', 'viewer');
@@ -30,6 +30,7 @@ module.exports = {
 			this.commandeCustomName('blacacia', 'viewer', 'blaca');
             this.commande('malaise', 'viewer');
 			this.commandeCustomName('babulle', 'viewer', 'malaise');
+            this.commande('nahrengg', 'viewer');
 			
 			//links.
 			this.commande('discord', 'viewer');
@@ -37,8 +38,8 @@ module.exports = {
 			this.commandeCustomName('ytb', 'viewer', 'youtube');
 			
 			//for broadcaster.
-			this.commande('pinglive', 'modo');
-			this.commandeCustomName('pingstream', 'modo', 'pinglive');
+			//this.commande('pinglive', 'modo'); //TODO: debug.
+			//this.commandeCustomName('pingstream', 'modo', 'pinglive');
 			this.commande('axohat', 'modo');
 			
 			//for broadcaster.
@@ -150,6 +151,7 @@ module.exports = {
 						this.requiredScript.func(target, context, msg, client);
 					}catch(e){
 						client.say(target, "sowwy, la commande à crash éwè");
+						console.log("commande ["+this.name+": "+msg+"] crash !");
 						console.log(e);
 					}
 					
