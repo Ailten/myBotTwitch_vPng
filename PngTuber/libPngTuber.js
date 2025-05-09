@@ -52,7 +52,7 @@ module.exports = {
         //dbMin, dbMax : 0.0 //parameters for range decibel to print (no one equal to draw all time).
         //isBlink : false //parameter for draw if is in blink time (no one equal to draw all time).
         //funcDrawAnimated : (raylib, layer, iCurve)=>{} //function for draw with pro paameters (rect source, dest, origin, rotate) (no one equal to draw texture default).
-        //typeLayer : "..." //type de layer for enable/disable with cmd.
+        //typeLayer : ["..."] //type de layer for enable/disable with cmd.
         //isHide : false //for skip layer hide in render process.
 
         //load all layers.
@@ -190,14 +190,14 @@ module.exports = {
                 funcDrawAnimated: funcAnimeHead
             },
             {
-                sprite: this.raylib.LoadTexture(pathSprite + 'hairTop.png'),
-                funcDrawAnimated: funcAnimeHead
-            },
-            {
                 sprite: this.raylib.LoadTexture(pathSprite + 'maidHat.png'),
                 typeLayer: ["hat", "maid"],
                 funcDrawAnimated: funcAnimeHead,
                 isHide: true
+            },
+            {
+                sprite: this.raylib.LoadTexture(pathSprite + 'hairTop.png'),
+                funcDrawAnimated: funcAnimeHead
             },
             {
                 sprite: this.raylib.LoadTexture(pathSprite + 'eyesBorder.png'),
@@ -285,6 +285,7 @@ module.exports = {
         //used in axohat and maid.
 
         this.layersPngTuber.filter((l) =>
+            l.typeLayer != undefined &&
             l.typeLayer.includes(typeLayerAsk)
         ).forEach((l) => 
             l.isHide = !isVisible

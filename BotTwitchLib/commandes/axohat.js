@@ -16,6 +16,7 @@ module.exports = {
         	this.libPngTuber.setVisibilityToATypeLayer('hat', false);
         	this.libPngTuber.setVisibilityToATypeLayer('axoHat', true);
 
+			return;
 		}
 
 		this.libPngTuber.setVisibilityToATypeLayer('axoHat', false);
