@@ -60,7 +60,7 @@ module.exports = {
         var layers = [
             {
                 sprite: this.raylib.LoadTexture(pathSprite + 'axoHat2.png'),
-                typeLayer: "axoHat",
+                typeLayer: ["hat", "axoHat"],
                 funcDrawAnimated: funcAnimeHead,
                 isHide: true
             },
@@ -125,7 +125,13 @@ module.exports = {
                 }
             },
             {
-                sprite: this.raylib.LoadTexture(pathSprite + 'tronc.png')
+                sprite: this.raylib.LoadTexture(pathSprite + 'tronc.png'),
+                typeLayer: ["tronc", "defaultTronc"]
+            },
+            {
+                sprite: this.raylib.LoadTexture(pathSprite + 'maidTronc.png'),
+                typeLayer: ["tronc", "maid"],
+                isHide: true
             },
             {
                 sprite: this.raylib.LoadTexture(pathSprite + 'face.png'),
@@ -188,13 +194,19 @@ module.exports = {
                 funcDrawAnimated: funcAnimeHead
             },
             {
+                sprite: this.raylib.LoadTexture(pathSprite + 'maidHat.png'),
+                typeLayer: ["hat", "maid"],
+                funcDrawAnimated: funcAnimeHead,
+                isHide: true
+            },
+            {
                 sprite: this.raylib.LoadTexture(pathSprite + 'eyesBorder.png'),
                 isBlink: false,
                 funcDrawAnimated: funcAnimeHead
             },
             {
                 sprite: this.raylib.LoadTexture(pathSprite + 'axoHat1.png'),
-                typeLayer: "axoHat",
+                typeLayer: ["hat", "axoHat"],
                 funcDrawAnimated: funcAnimeHead,
                 isHide: true
             }
@@ -266,19 +278,17 @@ module.exports = {
 
     },
 
-    
-    editTypeLayer: function(typeLayer){
 
-        this.layersPngTuber.filter((l) => 
-            l.typeLayer != undefined && l.typeLayer == typeLayer
-        ).forEach((l) => {
+    //edit layers visibility.
+    setVisibilityToATypeLayer: function(typeLayerAsk, isVisible){
 
-            if(l.isHide === undefined)
-                l.isHide = true;
-            else
-                l.isHide = !l.isHide;
+        //used in axohat and maid.
 
-        });
+        this.layersPngTuber.filter((l) =>
+            l.typeLayer.includes(typeLayerAsk)
+        ).forEach((l) => 
+            l.isHide = !isVisible
+        );
 
     }
 

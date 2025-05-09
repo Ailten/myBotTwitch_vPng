@@ -10,8 +10,8 @@ module.exports = {
 
 			//cmd viewers.
 			this.commande('miaou', 'viewer');
-			//this.commande('hug', 'viewer');
-			//this.commandeCustomName('kiss', 'viewer', 'hug');
+			this.commande('hug', 'viewer');
+			this.commandeCustomName('kiss', 'viewer', 'hug');
 			this.commande('uwu', 'viewer');
 			this.commande('pipou', 'viewer');
 			this.commande('whip', 'viewer');
@@ -41,6 +41,8 @@ module.exports = {
 			//this.commande('pinglive', 'modo'); //TODO: debug.
 			//this.commandeCustomName('pingstream', 'modo', 'pinglive');
 			this.commande('axohat', 'modo');
+			this.commande('maid', 'viewer');
+			this.commandeCustomName('maide', 'viewer', 'maid');
 			
 			//for broadcaster.
 			this.commande('debug', 'broadcaster');
