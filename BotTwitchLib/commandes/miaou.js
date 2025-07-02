@@ -8,7 +8,6 @@ module.exports = {
 	func: function(target, context, msg, client){
 
         const arrayMp3 = [
-            {path: '/home/faouzi/Téléchargements/susMp3/yuukiMp3/yuukiMiaou.mp3', volume: 30},
             {path: '/home/faouzi/Téléchargements/susMp3/blacaMp3/blacaMiaou.mp3', volume: 30},
             {path: '/home/faouzi/Téléchargements/susMp3/nahrenggMp3/nahrenggMiaou.mp3', volume: 30}
         ];

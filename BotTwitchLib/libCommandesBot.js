@@ -17,15 +17,10 @@ module.exports = {
 			this.commande('whip', 'viewer');
 			this.commande('vineboom', 'viewer');
 			this.commandeCustomName('boom', 'viewer', 'vineboom');
+			this.commande('bonk', 'viewer');
+			this.commande('fart', 'viewer');
 
 			//cmd pseudo.
-			this.commande('axo', 'viewer');
-			this.commandeCustomName('waf', 'viewer', 'axo');
-			//this.commande('chlow', 'viewer'); //DOTO: ask chlow permission !!!
-			//this.commandeCustomName('chl0w', 'viewer', 'chlow');
-			//this.commandeCustomName('csc', 'viewer', 'chlow');
-			this.commande('damn', 'viewer');
-			this.commandeCustomName('ria', 'viewer', 'damn');
 			this.commande('blaca', 'viewer');
 			this.commandeCustomName('blacacia', 'viewer', 'blaca');
             this.commande('malaise', 'viewer');
@@ -36,24 +31,19 @@ module.exports = {
 			this.commande('discord', 'viewer');
 			this.commande('youtube', 'viewer');
 			this.commandeCustomName('ytb', 'viewer', 'youtube');
-			
-			//for broadcaster.
-			//this.commande('pinglive', 'modo'); //TODO: debug.
-			//this.commandeCustomName('pingstream', 'modo', 'pinglive');
-			this.commande('axohat', 'modo');
+
+            //pngtuber layers/
+			this.commande('axohat', 'viewer');
+			this.commandeCustomName('axo', 'viewer', 'axohat'");
 			this.commande('maid', 'viewer');
 			this.commandeCustomName('maide', 'viewer', 'maid');
 			
+			//for modo.
+			//this.commande('pinglive', 'modo'); //TODO: need debug.
+			//this.commandeCustomName('pingstream', 'modo', 'pinglive');
+			
 			//for broadcaster.
 			this.commande('debug', 'broadcaster');
-			//this.commande('wholive', 'broadcaster'); //FIXME : debug call fetch.
-			//this.commandeCustomName('whostream', 'broadcaster', 'wholive');
-
-			//forgoten cmd.
-			//this.commande('play', 'viewer');
-			//this.commande('pngtuber', 'viewer');
-			//this.commande('pat', 'viewer');
-			//this.commande('obsLayer', 'broadcaster');
 
 		}
     	return this.listCommandesArray;

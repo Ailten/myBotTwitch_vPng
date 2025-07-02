@@ -115,7 +115,7 @@ module.exports = {
         let currentHoursStr = (/[ ]{1}[0-9]{2}[:]{1}[0-9]{2}/).exec(currentDateTimeStr)[0].substring(1); //get "hh:mm".
 
         //write pseudo find in console.
-        console.log(`le viewer [${pseudoFind}] a rejoin le chat ! [${currentHoursStr}]`);
+        console.log(`viewer [${pseudoFind}] a rejoin le chat ! [${currentHoursStr}]`);
 	
 	}
 }

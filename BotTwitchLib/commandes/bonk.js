@@ -1,14 +1,13 @@
 
 module.exports = {
-
+	
     //execute cmd.
     cmdPlayer: require('./../libCmdPlayer.js'),
 
 	//function call when commande say in chat.
 	func: function(target, context, msg, client){
 
-        this.cmdPlayer.playMp3(`/home/faouzi/Téléchargements/susMp3/chlowCsc.mp3`, 80);
-
-    }
-
+        this.cmdPlayer.playMp3('/home/faouzi/Téléchargements/susMp3/bonk.mp3', 30);
+	
+	}
 }
